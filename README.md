@@ -8,7 +8,7 @@
 ##Tools 
 - Testing : Postman 9.4.1
 
-<hr>
+
 ## Routes:
 ### Home
 It's a un-protected route means anybody can visit it.
@@ -64,5 +64,5 @@ Hence depending upon Http request it'll perform its action.
 - Second route will get all orders of current user.
 - Last route well get a specific order using its id.
 
-<hr>
+
 ### Full Documentation about routes  [Here](https://github.com/khairnarsaurabh23/eShop/blob/main/swagger.yaml)
