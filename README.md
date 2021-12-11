@@ -1,6 +1,6 @@
 # eShop
 ## A backend project built using Node.js
-### Dependanncies[https://github.com/khairnarsaurabh23/eShop/blob/main/package.json]
+### [Dependanncies](https://github.com/khairnarsaurabh23/eShop/blob/main/package.json)
 
 
 # Routes:
@@ -55,3 +55,5 @@ Last admin route has Get, Put, Delete Http methods associated with it. So depend
 >localhost:4000/api/v1/:id
 - Second route will get all orders of current user.
 - Last route well get a specific order using its id.
+
+## [Documentation](https://github.com/khairnarsaurabh23/eShop/blob/main/swagger.yaml)
