@@ -203,10 +203,10 @@ exports.updateUserDetails = bigPromise(async (req, res, next) => {
 	if (req.files) {
 		//check if user had profile photo uploaded before
 //need some more work
-		cloudinary.v2.search.expression(req.files.photo.secure_url).execute()
+		cloudinary.v2.search.expression(req.files.photo.id).execute()
 		.then(
 			//delete the old Photo
-			cloudinary.v2.uploader.destroy(req.files.photo.secure_url)
+			cloudinary.v2.uploader.destroy(req.files.photo.id)
 		);
 
 		//upload the new one
@@ -321,77 +321,3 @@ exports.manager = bigPromise(async (req, res, next) => {
     users,
   });
 });
-
-
-
-
-// exports.getUserLoggedInDetails = bigPromise( async (req, res, nex, isLoggedIn) => {
-// 	isLoggedIn()
-// 	const user = User.findeById(req.user.id);
-//
-// 	res.status(200).json({
-// 		success: true,
-// 		user,
-// 	});
-// });
-
-
-
-// //userController.js
-//
-// exports.getLoggedInUserDetails = BigPromise(async (req, res, next) => {
-//   const user = await User.findById(req.user.id);
-//   res.status(200).json({
-//     success: true,
-//     user,
-//   });
-// });
-//
-//
-//
-// //user.js middleware
-//
-// const User = require('../models/user');
-// const bigPromise = require('./bigPromise');
-// const customError = require('../utils/cError');
-// const jwt = require('jsonwebtoken');
-//
-// exports.isLoggedIn = bigPromise(async (req, res, next) => {
-//     const token = req.cookies.token;
-//
-//     if (!token) {
-//         return next(new customError('Your login session expired, login agin', 401));
-//     }
-//
-//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-//
-//     //injecting our own info to req
-//     req.user = await User.findeById(decoded.id);
-//
-//     next();
-// });
-//
-//
-//
-//
-// //routes/user.js
-//
-// const express = require('express');
-// const router = express.Router();
-//
-// const {signup,
-//     login,
-//     logout,
-//     forgotPassword,
-//     passwordReset,
-//     getUserLoggedInDetails} = require('../controllers/userController');
-// const isLoggedIn = require('../middlewares/user');
-//
-// router.route('/signup').post(signup);
-// router.route('/login').get(login);
-// router.route('/logout').get(logout);
-// router.route('/forgotpassword').post(forgotPassword);
-// router.route('/password/reset/:token').post(passwordReset);
-// router.route('/dashboard').get(isLoggedIn, getUserLoggedInDetails);
-//
-// module.exports = router;
