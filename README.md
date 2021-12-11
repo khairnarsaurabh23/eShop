@@ -5,7 +5,7 @@
 >gateways etc. The project uses Jsw web tokens for login releted functionalities.
 ### [Dependanncies](https://github.com/khairnarsaurabh23/eShop/blob/main/package.json)
 
-##Tools 
+## Tools 
 - Testing : Postman 9.4.1
 
 
