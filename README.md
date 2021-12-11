@@ -8,60 +8,61 @@
 ##Tools 
 - Testing : Postman 9.4.1
 
-
+<hr>
 ## Routes:
 ### Home
 It's a un-protected route means anybody can visit it.
->localhost:4000/api/v1/
+>localhost:4000/api/v1/<br>
 
 ### User Routes
 1. Un-protected routes
->localhost:4000/api/v1/signup
->localhost:4000/api/v1/login
->localhost:4000/api/v1/logout
->localhost:4000/api/v1/forgotpassword
->localhost:4000/api/v1/password/reset/:token
+>localhost:4000/api/v1/signup<br>
+>localhost:4000/api/v1/login<br>
+>localhost:4000/api/v1/logout<br>
+>localhost:4000/api/v1/forgotpassword<br>
+>localhost:4000/api/v1/password/reset/:token<br>
 
 2. Protected routes only to logged in users
 - These routes are protected by [`userMiddleware`](https://github.com/khairnarsaurabh23/eShop/blob/main/middlewares/user.js) middleware
->localhost:4000/api/v1/dashboard
->localhost:4000/api/v1/user/changepassword
->localhost:4000/api/v1/user/update
+>localhost:4000/api/v1/dashboard<br>
+>localhost:4000/api/v1/user/changepassword<br>
+>localhost:4000/api/v1/user/update<br>
 
 3. Admin specific routes
 - These routes are protected by [`userRole`](https://github.com/khairnarsaurabh23/eShop/blob/main/middlewares/user.js) middleware
->localhost:4000/api/v1/admin/users
->localhost:4000/api/v1/user/:id
+>localhost:4000/api/v1/admin/users<br>
+>localhost:4000/api/v1/user/:id<br>
 Last admin route has Get, Put, Delete Http methods associated with it. 
 So depending on request it'll perform its specific action.
 
 ###  Product Routes
 1. Review Routes
->localhost:4000/api/v1/review
+>localhost:4000/api/v1/review<br>
 - This Route has Post(add review) and Delete(delete review) methods associated with it. 
 Hence depending upon Http request it'll perform its action.
 
 2. Admin Specific Routes
->localhost:4000/api/v1/admin/addproduct
->localhost:4000/api/v1/admin/update/:id
+>localhost:4000/api/v1/admin/addproduct<br>
+>localhost:4000/api/v1/admin/update/:id<br>
 - Last admin route has Http Put and Delete methods associated with it.
 
 ### Payment routes
 1. Get routes
->localhost:4000/api/v1/stripekey
->localhost:4000/api/v1/razorpaykey
+>localhost:4000/api/v1/stripekey<br>
+>localhost:4000/api/v1/razorpaykey<br>
 - These routes will get the public key to proceed with payment.
 
 2. Make payment route
->localhost:4000/api/v1/payment/stripe
->localhost:4000/api/v1/payment/rezorpay
+>localhost:4000/api/v1/payment/stripe<br>
+>localhost:4000/api/v1/payment/rezorpay<br>
 - The route to make a payment using gateway 
 
 ### Order routes
->localhost:4000/api/v1/order
->localhost:4000/api/v1/user/order
->localhost:4000/api/v1/:id
+>localhost:4000/api/v1/order<br>
+>localhost:4000/api/v1/user/order<br>
+>localhost:4000/api/v1/:id<br>
 - Second route will get all orders of current user.
 - Last route well get a specific order using its id.
 
+<hr>
 ### Full Documentation about routes  [Here](https://github.com/khairnarsaurabh23/eShop/blob/main/swagger.yaml)
